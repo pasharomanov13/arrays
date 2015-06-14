@@ -1,0 +1,47 @@
+//два максимума
+#include <math.h>
+#include <iostream>
+#define N 10
+using namespace std;
+
+int main()
+{
+    int A[N];
+    int max1,max2;
+     int temp;
+    for (int a=0; a<N; a++)
+    {
+    cin >> A[a] ;
+    }
+    max1=A[0];
+    max2=A[1];
+     for (int c = 0; c<N-1 ; c++)
+     {
+         if (A[c] != A[c+1]) goto god;
+         else cout << "b neopr"  << endl;
+     }
+god:
+     if (max1< max2)
+     {
+
+         temp = max1;
+    max1= max2;
+    max2 = temp;
+     }
+for (int i=2; i<N-1; i++)
+    {
+if(A[i]> max2)
+{
+
+max2 = A[i];
+}
+    if (max1< max2)
+    {
+        temp = max1;
+   max1= max2;
+   max2 = temp;
+    }
+}
+    cout << "result" << max1 << max2 << endl;
+    return 0;
+}
