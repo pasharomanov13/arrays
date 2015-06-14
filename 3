@@ -1,0 +1,25 @@
+//параллельность векторов(коллинеарность)
+#include <math.h>
+#include <iostream>
+#define N 6
+using namespace std;
+
+int main()
+{
+        int A[N];
+  //  int res = 0;
+        for (int a=0; a<N; a++)
+    {
+    cin >> A[a] ;
+    }
+//    res = (A[1]*A[5]-A[2]*A[4])-
+//          (A[0]*A[5]-A[2]*A[3])+
+//          (A[0]*A[4]-A[1]*A[3]);
+
+//    if (res == 0)
+//    cout << "result good" << endl;
+//    else cout << "result bad" << endl;
+if ( (A[1]*A[5]-A[2]*A[4]) ==0 || (A[0]*A[5]-A[2]*A[3]) ==0 || (A[0]*A[4]-A[1]*A[3]) ==0  )  cout << "result good" << endl;
+else cout << "result bad" << endl;
+    return 0;
+}
