@@ -1,0 +1,52 @@
+//простота числа
+#include <math.h>
+#include <iostream>
+#define N 10
+using namespace std;
+
+int main()
+{
+    int k=8;
+  bool flag;
+    int A[N];
+   // int res[N];
+    for (int a=0; a<N; a++)
+    {
+    cin >> A[a] ;
+
+    }
+    for (int j=0; j<N;j++)
+    {
+ //int sqr;
+// sqr = sqrt(A[i]);
+
+        if(A[j] == 1 || A[j] == 2)
+           {
+               cout << A[j] << " is prime number.";
+           }
+           else
+        {
+ for (int i=2; i<=k; i++)//ult n rjczr//(
+ {
+ if( (A[j]%i)== 0){
+     //res[l] = A[j];
+     flag = true;
+                    break;
+   //  l++;
+
+ }
+ else
+                flag = false;
+
+}
+ if(flag == false)
+             cout << A[j] << " is prime number."<< endl;
+         else
+             cout << A[j] <<  "is composite number"<< endl;
+//cout << "Chislo " <<A[j]<< " prostoe" <<endl;
+    }
+    }
+//	cout << "result" << sum << endl;
+
+    return 0;
+}
