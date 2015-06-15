@@ -1,0 +1,51 @@
+#include <math.h>
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    //массив:
+    int a[] = {2, 3, 5, 7, 9, 11, 6, 8, 9, 10, 15,17,19, 5, 4, 14, 16, 20, 22, 3, 4};
+	int k;
+	int y=0;
+	int y_max=0;
+	int gen;
+    //длина массива:
+    int len = sizeof(a)/sizeof(a[0]);
+	int res [30];
+	int res2 [30];
+    //счетчики:
+    int cnt = 1, cnt_max = 0;
+	res [0]=0;
+    //цикл:
+    for(int i = 0; i < len - 1; i++)
+    {
+        if(a[i+1] > a[i]) //если след.> текущего., то:
+        {
+					//++y;
+			res[y] = i;
+			res[y+1] = i+1;
+			++y;
+            cnt = cnt + 1;
+        }
+        else //иначе:
+        {
+            if (cnt > cnt_max) cnt_max = cnt;
+            cnt = 1;
+			if(y > y_max) {
+				y_max = y;
+				
+gen= y_max+1;
+				for( k = 0; k < gen;k++){ res2[k]=res[k];}
+				res2[k+1]=res2[k]+1;
+			y=0;}
+        }
+    }
+
+    //вывод результата:
+  cout << cnt_max;
+  for (y=0; y < gen;y++){
+  cout << res2[y];}
+//cin >> cnt;
+    return 0;
+}
